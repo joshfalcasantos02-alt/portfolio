@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Joshua M. Falcasantos — Full-Stack Developer</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#0D0E0C}
+a{color:#EDEDE6;text-decoration:none}a:hover{color:#FFFFFF}
+.lift{transition:transform .45s cubic-bezier(.2,.7,.2,1),border-color .3s}
+.lift:hover{transform:translateY(-8px);border-color:#3A3B35}
+.lift .shot{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.lift:hover .shot{transform:scale(1.05)}
+.navlink{transition:color .2s}.navlink:hover{color:#EDEDE6}
+.btn{transition:transform .25s,box-shadow .3s,background .3s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 40px -12px rgba(198,244,91,.55)}
+.ghost{transition:background .25s,border-color .25s}
+.ghost:hover{background:#1A1B17;border-color:#5A5B54}
+.ring{animation:spin 30s linear infinite}
+.ring-2{animation:spin 50s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.pulse{animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(198,244,91,.5)}70%{box-shadow:0 0 0 9px rgba(198,244,91,0)}}
+.fadein{animation:fadein .45s ease both}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.chip{transition:background .25s,color .25s,border-color .25s;cursor:pointer}
+.tag{transition:background .25s,color .25s,transform .25s}
+.tag:hover{transform:translateY(-2px);background:#26271F;color:#FFFFFF}
+.xrow{transition:padding .3s,background .3s}
+.xrow:hover{padding-left:14px;background:#141512}
+.still *{animation:none !important;transition:none !important}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+</style>
+</helmet>
+<div class="{{motionClass}}" style="background: #0D0E0C; color: #EDEDE6; font-family: Inter, system-ui, sans-serif; min-height: 100vh; overflow: hidden">
+
+  <!-- NAV -->
+  <header style="max-width: 1280px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+    <a href="#top" style="font-family: Syne, sans-serif; font-weight: 800; font-size: 20px; letter-spacing: -0.02em">Joshua Falcasantos</a>
+    <nav aria-label="Primary" style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+      <a class="navlink" href="#work" style="padding: 12px 16px; font-size: 14px; color: #B5B5AC">Work</a>
+      <a class="navlink" href="#process" style="padding: 12px 16px; font-size: 14px; color: #B5B5AC">Process</a>
+      <a class="navlink" href="#about" style="padding: 12px 16px; font-size: 14px; color: #B5B5AC">About</a>
+      <a class="btn" href="#contact" style="padding: 12px 20px; font-size: 14px; font-weight: 600; border-radius: 999px; background: #EDEDE6; color: #0D0E0C">Let's talk</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="max-width: 1280px; margin: 0 auto; padding: 72px 24px 96px; position: relative">
+    <div aria-hidden="true" class="ring" style="position: absolute; right: -120px; top: -40px; width: 520px; height: 520px; border-radius: 50%; border: 1px dashed #2A2B27"></div>
+    <div aria-hidden="true" class="ring-2" style="position: absolute; right: 40px; top: 120px; width: 220px; height: 220px; border-radius: 50%; border: 1px solid #2A2B27">
+      <div style="position: absolute; top: -6px; left: 50%; margin-left: -6px; width: 12px; height: 12px; border-radius: 50%; background: {{accent}}"></div>
+    </div>
+    <div style="display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px 8px 10px; border: 1px solid #2E2F2A; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #B5B5AC; position: relative">
+      <span class="pulse" style="width: 8px; height: 8px; border-radius: 50%; background: {{accent}}"></span>
+      Available for new projects — Q1 2027
+    </div>
+    <h1 style="margin: 36px 0 0; font-family: Syne, sans-serif; font-weight: 800; font-size: clamp(48px, 9vw, 132px); line-height: 0.92; letter-spacing: -0.045em; max-width: 1100px; position: relative">
+      I build the web from <span style="color: {{accent}}">pixel</span> to server.
+    </h1>
+    <div style="margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; position: relative; font-family: 'JetBrains Mono', monospace; font-size: 15px; color: #8A8B83">
+      <span>Currently working as</span>
+      <span aria-live="polite" style="display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 10px; background: #1A1B17; color: #EDEDE6">
+        <span class="fadein" style="display: inline-block">{{role}}</span><span style="color: {{accent}}">_</span>
+      </span>
+    </div>
+    <div style="margin-top: 44px; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-end; justify-content: space-between; position: relative">
+      <p style="margin: 0; max-width: 520px; font-size: 19px; line-height: 1.6; color: #B5B5AC">I'm Joshua M. Falcasantos — a front-end and back-end developer with an eye for UI/UX. I can design it, code it, and keep the machine it runs on working.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px">
+        <a class="btn" href="#work" style="display: inline-flex; align-items: center; gap: 10px; padding: 18px 28px; border-radius: 999px; background: {{accent}}; color: #0D0E0C; font-weight: 600; font-size: 15px">
+          View selected work
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="M19 12l-7 7-7-7"></path></svg>
+        </a>
+        <a class="ghost" href="#contact" style="display: inline-flex; align-items: center; padding: 18px 28px; border-radius: 999px; border: 1px solid #3A3B35; font-weight: 500; font-size: 15px">Download CV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" style="max-width: 1280px; margin: 0 auto; padding: 120px 24px 40px">
+    <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-end; justify-content: space-between; margin-bottom: 40px">
+      <div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{accent}}">01 — Selected work</div>
+        <h2 style="margin: 14px 0 0; font-family: Syne, sans-serif; font-weight: 800; font-size: clamp(36px, 5vw, 64px); letter-spacing: -0.035em; line-height: 1">Projects</h2>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr)); gap: 28px; align-items: start">
+
+      <!-- Case 1: Bakery inventory -->
+            <article class="lift fadein" style="display: flex; flex-direction: column; border-radius: 28px; background: #161714; border: 1px solid #242520; overflow: hidden">
+        <div aria-hidden="true" style="height: 380px; background: #1E2A1A; position: relative; overflow: hidden">
+          <div class="shot" style="position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: center">
+            <div style="position: absolute; width: 360px; height: 360px; border-radius: 50%; background: {{accent}}; opacity: 0.16; top: -80px; left: -60px"></div>
+            <div style="width: 220px; height: 340px; border-radius: 34px 34px 0 0; background: #0D0E0C; border: 6px solid #2F3A2A; border-bottom: none; padding: 22px 16px 0; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px; position: relative">
+              <div style="font-size: 10px; color: #8A8B83">Items in stock</div>
+              <div style="font-family: Syne, sans-serif; font-weight: 800; font-size: 28px; color: #EDEDE6">1,248</div>
+              <div style="display: flex; gap: 6px">
+                <div style="flex: 1; height: 30px; border-radius: 10px; background: {{accent}}"></div>
+                <div style="flex: 1; height: 30px; border-radius: 10px; background: #23241F"></div>
+                <div style="flex: 1; height: 30px; border-radius: 10px; background: #23241F"></div>
+              </div>
+              <div style="height: 64px; border-radius: 14px; background: #191A16; display: flex; align-items: flex-end; gap: 5px; padding: 10px">
+                <div style="flex: 1; height: 30%; border-radius: 3px; background: #3A3B35"></div>
+                <div style="flex: 1; height: 55%; border-radius: 3px; background: #3A3B35"></div>
+                <div style="flex: 1; height: 40%; border-radius: 3px; background: #3A3B35"></div>
+                <div style="flex: 1; height: 80%; border-radius: 3px; background: {{accent}}"></div>
+                <div style="flex: 1; height: 60%; border-radius: 3px; background: #3A3B35"></div>
+              </div>
+              <div style="height: 36px; border-radius: 12px; background: #191A16"></div>
+              <div style="height: 36px; border-radius: 12px; background: #191A16"></div>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 28px 32px 32px; display: flex; flex-direction: column; gap: 12px">
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #9A9B92">
+            <span style="padding: 6px 12px; border: 1px solid #2E2F2A; border-radius: 999px">Inventory system</span>
+            <span style="padding: 6px 12px; border: 1px solid #2E2F2A; border-radius: 999px">Web app</span>
+            <span style="padding: 6px 12px; border: 1px solid #2E2F2A; border-radius: 999px">2026</span>
+          </div>
+          <h3 style="margin: 6px 0 0; font-family: Syne, sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.02em">Simon &amp; Zyrus Bakery inventory</h3>
+          <p style="margin: 0; color: #9A9B92; font-size: 16px; line-height: 1.6">An inventory system that tracks the bakery's goods and products and turns the data into statistics reports.</p>
+          <button type="button" class="ghost" onClick="{{cases.c1.toggle}}" aria-expanded="{{cases.c1.expanded}}" style="align-self: flex-start; margin-top: 8px; display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 999px; border: 1px solid #3A3B35; background: transparent; color: #EDEDE6; font-size: 14px; font-weight: 500; font-family: Inter, sans-serif; cursor: pointer">{{cases.c1.label}} <span aria-hidden="true" style="{{cases.c1.icon}}">+</span></button>
+          <sc-if value="{{cases.c1.open}}" hint-placeholder-val="{{ false }}">
+            <div class="fadein" style="margin-top: 8px; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px">
+              <div style="padding: 16px; border-radius: 16px; background: #0D0E0C"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: {{accent}}">CLIENT</div><div style="margin-top: 8px; font-size: 14px; line-height: 1.5; color: #B5B5AC">Simon &amp; Zyrus Bakery</div></div>
+              <div style="padding: 16px; border-radius: 16px; background: #0D0E0C"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: {{accent}}">WHAT I BUILT</div><div style="margin-top: 8px; font-size: 14px; line-height: 1.5; color: #B5B5AC">An inventory system that tracks goods and generates statistics reports</div></div>
+              <div style="padding: 16px; border-radius: 16px; background: #0D0E0C"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: {{accent}}">WHAT IT DOES</div><div style="margin-top: 8px; font-size: 14px; line-height: 1.5; color: #B5B5AC">Records every item and product coming in and going out</div></div>
+            </div>
+          </sc-if>
+        </div>
+      </article>
+
+      <!-- Case 2: EOS WMSU player stats -->
+            <article class="lift fadein" style="display: flex; flex-direction: column; border-radius: 28px; background: #161714; border: 1px solid #242520; overflow: hidden">
+        <div aria-hidden="true" style="height: 380px; background: #1A1D26; position: relative; overflow: hidden">
+          <div class="shot" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 36px; box-sizing: border-box">
+            <div style="width: 100%; max-width: 440px; border-radius: 18px; background: #0D0E0C; border: 1px solid #2B2F3B; padding: 18px; box-sizing: border-box; display: flex; gap: 14px">
+              <div style="width: 54px; display: flex; flex-direction: column; gap: 10px">
+                <div style="height: 22px; border-radius: 6px; background: {{accent}}"></div>
+                <div style="height: 10px; border-radius: 4px; background: #262833"></div>
+                <div style="height: 10px; border-radius: 4px; background: #262833"></div>
+                <div style="height: 10px; border-radius: 4px; background: #262833"></div>
+                <div style="height: 10px; border-radius: 4px; background: #262833"></div>
+              </div>
+              <div style="flex: 1; display: flex; flex-direction: column; gap: 10px">
+                <div style="display: flex; gap: 8px">
+                  <div style="flex: 1; height: 52px; border-radius: 10px; background: #171922; padding: 8px; box-sizing: border-box"><div style="width: 50%; height: 6px; border-radius: 3px; background: #3A3E4C"></div><div style="width: 70%; height: 14px; margin-top: 10px; border-radius: 4px; background: #EDEDE6"></div></div>
+                  <div style="flex: 1; height: 52px; border-radius: 10px; background: #171922; padding: 8px; box-sizing: border-box"><div style="width: 50%; height: 6px; border-radius: 3px; background: #3A3E4C"></div><div style="width: 55%; height: 14px; margin-top: 10px; border-radius: 4px; background: #EDEDE6"></div></div>
+                  <div style="flex: 1; height: 52px; border-radius: 10px; background: #171922; padding: 8px; box-sizing: border-box"><div style="width: 50%; height: 6px; border-radius: 3px; background: #3A3E4C"></div><div style="width: 62%; height: 14px; margin-top: 10px; border-radius: 4px; background: {{accent}}"></div></div>
+                </div>
+                <div style="height: 150px; border-radius: 12px; background: #171922; display: flex; align-items: flex-end; gap: 7px; padding: 14px; box-sizing: border-box">
+                  <div style="flex: 1; height: 35%; border-radius: 4px 4px 0 0; background: #3A3E4C"></div>
+                  <div style="flex: 1; height: 50%; border-radius: 4px 4px 0 0; background: #3A3E4C"></div>
+                  <div style="flex: 1; height: 42%; border-radius: 4px 4px 0 0; background: #3A3E4C"></div>
+                  <div style="flex: 1; height: 68%; border-radius: 4px 4px 0 0; background: #3A3E4C"></div>
+                  <div style="flex: 1; height: 58%; border-radius: 4px 4px 0 0; background: #3A3E4C"></div>
+                  <div style="flex: 1; height: 90%; border-radius: 4px 4px 0 0; background: {{accent}}"></div>
+                  <div style="flex: 1; height: 74%; border-radius: 4px 4px 0 0; background: #3A3E4C"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 28px 32px 32px; display: flex; flex-direction: column; gap: 12px">
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #9A9B92">
+            <span style="padding: 6px 12px; border: 1px solid #2E2F2A; border-radius: 999px">Records system</span>
+            <span style="padding: 6px 12px; border: 1px solid #2E2F2A; border-radius: 999px">Web app</span>
+            <span style="padding: 6px 12px; border: 1px solid #2E2F2A; border-radius: 999px">2026</span>
+          </div>
+          <h3 style="margin: 6px 0 0; font-family: Syne, sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.02em">EOS WMSU player stats</h3>
+          <p style="margin: 0; color: #9A9B92; font-size: 16px; line-height: 1.6">A system that tracks players and their statistics, with reports on new members per college and the games they play.</p>
+          <button type="button" class="ghost" onClick="{{cases.c2.toggle}}" aria-expanded="{{cases.c2.expanded}}" style="align-self: flex-start; margin-top: 8px; display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 999px; border: 1px solid #3A3B35; background: transparent; color: #EDEDE6; font-size: 14px; font-weight: 500; font-family: Inter, sans-serif; cursor: pointer">{{cases.c2.label}} <span aria-hidden="true" style="{{cases.c2.icon}}">+</span></button>
+          <sc-if value="{{cases.c2.open}}" hint-placeholder-val="{{ false }}">
+            <div class="fadein" style="margin-top: 8px; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px">
+              <div style="padding: 16px; border-radius: 16px; background: #0D0E0C"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: {{accent}}">CLIENT</div><div style="margin-top: 8px; font-size: 14px; line-height: 1.5; color: #B5B5AC">E17 WMSU</div></div>
+              <div style="padding: 16px; border-radius: 16px; background: #0D0E0C"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: {{accent}}">WHAT I BUILT</div><div style="margin-top: 8px; font-size: 14px; line-height: 1.5; color: #B5B5AC">A system that tracks players and generates statistics reports</div></div>
+              <div style="padding: 16px; border-radius: 16px; background: #0D0E0C"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: {{accent}}">WHAT IT DOES</div><div style="margin-top: 8px; font-size: 14px; line-height: 1.5; color: #B5B5AC">Records new members per college, plus their games and stats</div></div>
+            </div>
+          </sc-if>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROCESS (click a step) -->
+  <section id="process" style="max-width: 1280px; margin: 0 auto; padding: 120px 24px">
+    <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{accent}}">02 — How I work</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 16px 40px; align-items: flex-end; justify-content: space-between; margin: 14px 0 48px">
+      <h2 style="margin: 0; font-family: Syne, sans-serif; font-weight: 800; font-size: clamp(36px, 5vw, 64px); letter-spacing: -0.035em; line-height: 1; max-width: 760px">A process built for clarity, not ceremony.</h2>
+      <p style="margin: 0; color: #8A8B83; font-size: 15px">Click a step to focus it.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 1px; background: #242520; border: 1px solid #242520; border-radius: 28px; overflow: hidden">
+      <sc-for list="{{steps}}" as="s" hint-placeholder-count="4">
+        <button type="button" onClick="{{s.pick}}" aria-pressed="{{s.pressed}}" style="{{s.style}}">
+          <span style="{{s.numStyle}}">{{s.num}}</span>
+          <span style="display: block; font-family: Syne, sans-serif; font-size: 22px; font-weight: 700">{{s.title}}</span>
+          <span style="{{s.textStyle}}">{{s.text}}</span>
+        </button>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="max-width: 1280px; margin: 0 auto; padding: 40px 24px 120px; display: flex; flex-wrap: wrap; gap: 64px">
+    <div style="flex: 1 1 420px; min-width: 0">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{accent}}">03 — About</div>
+      <h2 style="margin: 14px 0 28px; font-family: Syne, sans-serif; font-weight: 800; font-size: clamp(36px, 5vw, 64px); letter-spacing: -0.035em; line-height: 1">Full-stack developer, hardware-ready.</h2>
+      <p style="margin: 0 0 18px; color: #B5B5AC; font-size: 18px; line-height: 1.7">Hi, I'm Joshua M. Falcasantos — a full-stack developer who likes owning a project from the first sketch to the server it runs on. On the front end I design and build clean, responsive interfaces that feel easy to use; on the back end I write the APIs and databases that keep them running.</p>
+      <p style="margin: 0 0 18px; color: #B5B5AC; font-size: 18px; line-height: 1.7">I also know my way around hardware, operating systems and networking, so when something breaks I can trace it from the UI all the way down to the machine.</p>
+      <p style="margin: 0 0 36px; color: #B5B5AC; font-size: 18px; line-height: 1.7">I'm always learning, I care about the details, and I'm open to freelance work and new opportunities.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px">
+        <span class="tag" style="padding: 10px 16px; border-radius: 999px; background: #1A1B17; font-size: 14px">HTML / CSS</span>
+        <span class="tag" style="padding: 10px 16px; border-radius: 999px; background: #1A1B17; font-size: 14px">JavaScript</span>
+        <span class="tag" style="padding: 10px 16px; border-radius: 999px; background: #1A1B17; font-size: 14px">Responsive UI</span>
+        <span class="tag" style="padding: 10px 16px; border-radius: 999px; background: #1A1B17; font-size: 14px">REST APIs</span>
+        <span class="tag" style="padding: 10px 16px; border-radius: 999px; background: #1A1B17; font-size: 14px">Databases</span>
+        <span class="tag" style="padding: 10px 16px; border-radius: 999px; background: #1A1B17; font-size: 14px">Figma</span>
+        <span class="tag" style="padding: 10px 16px; border-radius: 999px; background: #1A1B17; font-size: 14px">PC assembly &amp; repair</span>
+        <span class="tag" style="padding: 10px 16px; border-radius: 999px; background: #1A1B17; font-size: 14px">Networking</span>
+      </div>
+    </div>
+    <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #6E6F67; padding-bottom: 18px; border-bottom: 1px solid #242520">Experience &amp; credentials</div>
+      <div class="xrow" style="display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; padding: 26px 0; border-bottom: 1px solid #242520">
+        <div><div style="font-family: Syne, sans-serif; font-weight: 700; font-size: 20px">Full-Stack Developer</div><div style="color: #9A9B92; margin-top: 6px; font-size: 15px">Front-end &amp; back-end · Student &amp; self-taught</div></div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9A9B92">Now</div>
+      </div>
+      <div class="xrow" style="display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; padding: 26px 0; border-bottom: 1px solid #242520">
+        <div><div style="font-family: Syne, sans-serif; font-weight: 700; font-size: 20px">BS Information Technology</div><div style="color: #9A9B92; margin-top: 6px; font-size: 15px">Western Mindanao State University</div></div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9A9B92">3rd year</div>
+      </div>
+      <div class="xrow" style="display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; padding: 26px 0; border-bottom: 1px solid #242520">
+        <div><div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px"><span style="font-family: Syne, sans-serif; font-weight: 700; font-size: 20px">Associate in Computing Technology, Major in Networking</span><span style="padding: 4px 10px; border-radius: 999px; background: {{accent}}; color: #0D0E0C; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500">Graduated</span></div><div style="color: #9A9B92; margin-top: 6px; font-size: 15px">Western Mindanao State University</div></div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #9A9B92">2025 — 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="max-width: 1280px; margin: 0 auto; padding: 0 24px 64px">
+    <div style="border-radius: 36px; background: {{accent}}; color: #0D0E0C; padding: clamp(40px, 7vw, 96px) clamp(28px, 6vw, 80px); position: relative; overflow: hidden">
+      <div aria-hidden="true" class="ring" style="position: absolute; right: -100px; bottom: -160px; width: 440px; height: 440px; border-radius: 50%; border: 2px dashed #0D0E0C; opacity: 0.18"></div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; position: relative">04 — Contact</div>
+      <h2 style="margin: 18px 0 40px; font-family: Syne, sans-serif; font-weight: 800; font-size: clamp(44px, 8vw, 112px); letter-spacing: -0.045em; line-height: 0.92; max-width: 900px; position: relative">Have a project that needs building?</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px; position: relative; align-items: center">
+        <a href="mailto:joshflcasantos02@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; padding: 20px 30px; border-radius: 999px; background: #0D0E0C; color: #EDEDE6; font-weight: 600; font-size: 16px">
+          joshflcasantos02@gmail.com
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"></path><path d="M8 7h9v9"></path></svg>
+        </a>
+        <button type="button" onClick="{{copy}}" style="display: inline-flex; align-items: center; gap: 10px; padding: 20px 26px; border-radius: 999px; border: 1.5px solid #0D0E0C; background: transparent; color: #0D0E0C; font-weight: 600; font-size: 16px; font-family: Inter, sans-serif; cursor: pointer">
+          <sc-if value="{{notCopied}}" hint-placeholder-val="{{ true }}">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15V5a2 2 0 0 1 2-2h10"></path></svg>
+          </sc-if>
+          <sc-if value="{{copied}}" hint-placeholder-val="{{ false }}">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg>
+          </sc-if>
+          <span aria-live="polite">{{copyLabel}}</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="max-width: 1280px; margin: 0 auto; padding: 24px 24px 48px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; color: #8A8B83; font-size: 14px">
+    <span>© 2026 Joshua M. Falcasantos. Designed &amp; built with care.</span>
+    <nav aria-label="Social" style="display: flex; flex-wrap: wrap; gap: 4px">
+      <a class="navlink" href="https://github.com/joshfalcasantos02-alt" target="_blank" rel="noopener" style="padding: 12px 14px; color: #B5B5AC">GitHub</a>
+      <a class="navlink" href="https://www.linkedin.com/in/joshhwah/" target="_blank" rel="noopener" style="padding: 12px 14px; color: #B5B5AC">LinkedIn</a>
+      <a class="navlink" href="#top" style="padding: 12px 14px; color: #B5B5AC">Back to top ↑</a>
+    </nav>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#C6F45B","options":["#C6F45B","#FF7A45","#7CC4FF","#F2C14E"]},"motion":{"editor":"boolean","default":true},"$preview":{"width":1440,"height":5200}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { role: 0, openCase: '', step: 3, copied: false };
+  }
+  componentDidMount() {
+    this.timer = setInterval(() => this.setState({ role: (this.state.role + 1) % 3 }), 2400);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    clearTimeout(this.copyTimer);
+  }
+  renderVals() {
+    const accent = this.props.accent ?? '#C6F45B';
+    const motion = this.props.motion ?? true;
+    const roles = ['Front-End Developer', 'Back-End Developer', 'UI/UX Designer'];
+
+    const cases = {};
+    ['c1', 'c2'].forEach((k) => {
+      const on = this.state.openCase === k;
+      cases[k] = {
+        open: on, expanded: on ? 'true' : 'false',
+        label: on ? 'Hide details' : 'See details',
+        toggle: () => this.setState({ openCase: on ? '' : k }),
+        icon: 'display:inline-block;font-size:18px;line-height:1;transition:transform .3s;transform:rotate(' + (on ? '45deg' : '0deg') + ');color:' + accent
+      };
+    });
+
+    const stepData = [
+      ['Understand', 'Interviews, analytics and conversations to find the real problem behind the brief.'],
+      ['Define', 'Journey maps, flows and success metrics everyone agrees on before a single line of code.'],
+      ['Build & test', 'Clean front-end and solid back-end code, tested early with real users and refined until it feels obvious.'],
+      ['Ship & maintain', 'Deployment, QA and the hardware and systems know-how to keep it running after launch.']
+    ];
+    const sel = this.state.step;
+    const steps = stepData.map((d, i) => {
+      const on = i === sel;
+      return {
+        num: '0' + (i + 1), title: d[0], text: d[1], pressed: on ? 'true' : 'false',
+        pick: () => this.setState({ step: i }),
+        style: 'display:flex;flex-direction:column;gap:18px;text-align:left;border:none;cursor:pointer;font-family:Inter,sans-serif;padding:36px 32px 40px;transition:background .35s,color .35s;background:' + (on ? accent : '#0D0E0C') + ';color:' + (on ? '#0D0E0C' : '#EDEDE6'),
+        numStyle: 'display:block;font-family:Syne,sans-serif;font-weight:800;font-size:56px;line-height:1;transition:color .35s;color:' + (on ? 'rgba(13,14,12,.3)' : '#2E2F2A'),
+        textStyle: 'display:block;line-height:1.6;font-size:15px;color:' + (on ? '#1F201C' : '#9A9B92')
+      };
+    });
+
+    const copied = this.state.copied;
+    return {
+      accent, cases, steps,
+      role: roles[this.state.role],
+      motionClass: motion ? '' : 'still',
+      copied, notCopied: !copied,
+      copyLabel: copied ? 'Copied!' : 'Copy email',
+      copy: () => {
+        try { if (navigator.clipboard) navigator.clipboard.writeText('joshflcasantos02@gmail.com').catch(() => {}); } catch (e) {}
+        this.setState({ copied: true });
+        clearTimeout(this.copyTimer);
+        this.copyTimer = setTimeout(() => this.setState({ copied: false }), 1800);
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
